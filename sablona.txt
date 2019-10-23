@@ -1,0 +1,18 @@
+@echo off
+
+set razred="RAZRED"
+set pot="POT"
+set label="LABEL"
+set graf="GRAF"
+set oznake="OZNAKE"
+
+title ---Test_%razred%---
+
+FOR /R "%pot%" %%F IN (*.*) do (
+@echo %%F>> ./rezultati_testiranj/Testiranje_"%razred%".txt
+python %label% --graph=%graf% --labels=%oznake% --input_layer="Placeholder" --output_layer="final_result" --image=%%F >> ./rezultati_testiranj/Testiranje_"%razred%".txt
+echo Testiranje slike: %%~nF
+@echo. >> ./rezultati_testiranj/Testiranje_"%razred%".txt
+)
+echo TESTIRANJE KONCANO!
+pause
