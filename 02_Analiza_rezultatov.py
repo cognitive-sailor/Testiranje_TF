@@ -10,7 +10,6 @@ def analiza():
     for i in razredi:
         oznake.append(i.lower())  # spremeni vsa imena razredov tako, da so zapisana z malo zacetnico
     ST_RAZREDOV = len(oznake)  # pridobi stevilo razredov
-    print(ST_RAZREDOV)
     M = np.zeros((ST_RAZREDOV, ST_RAZREDOV, 3))  # ustvari matriko M, kamor bomo zapisovali rezultate analize
 
     # za vsak razred odpri datoteko in jo analiziraj
@@ -22,6 +21,7 @@ def analiza():
             ST_VZORCEV += 1  # ugotovi koliko je slik v vsakem razredu
         with open(test_datoteka, "r") as f:
             f1=f.readlines()  # odpri datoteko za analizo
+        print("-----------------------------------------------------------------------")
         print(f"\nObdelujem rezulrate za razred {r.upper()}")
         # za vsako n vrstico (napoved, ki ima največjo gotovost je vedno na vrhu, tako je narejena datoteka label_image.py) preveri kateri razred je.
         for x in f1[1::(ST_RAZREDOV+1)]:

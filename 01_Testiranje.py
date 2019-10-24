@@ -54,5 +54,5 @@ def testiraj():
 
 
 pripravi_test_datoteke(ustvari_razrede())
-time.sleep(10)
+time.sleep(1)
 testiraj()
