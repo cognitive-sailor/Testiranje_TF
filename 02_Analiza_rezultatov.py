@@ -24,7 +24,7 @@ def analiza():
         print("-----------------------------------------------------------------------")
         print(f"\nObdelujem rezulrate za razred {r.upper()}")
         # za vsako n vrstico (napoved, ki ima največjo gotovost je vedno na vrhu, tako je narejena datoteka label_image.py) preveri kateri razred je.
-        for x in f1[1::(ST_RAZREDOV+1)]:
+        for x in f1[1::(ST_RAZREDOV+2)]:
             M = preveri_razred(k, x, ST_VZORCEV, oznake, M)
         for p, i in enumerate(razredi):
             print(f"{r.upper()}\nPovprecna gotovost napovedi: {M[k,p,2]}\nStevilo napovedi za razred {i}: {int(M[k,p,0])} izmed {ST_VZORCEV} ==> {round((M[k,p,0]/ST_VZORCEV)*100,2)} %\n")
